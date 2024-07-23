@@ -1,0 +1,369 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas,
+		'Courier New', monospace;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+#btn-filtro:nth-child(2) {
+	margin-left: auto;
+	margin-right: 5px;
+	font-weight: bold;
+
+}
+
+.dark-mode {
+	background-color: #212529;
+}
+
+.dark-mode h1 {
+	color: white;
+}
+
+.container {
+	max-width: 1100px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	min-height: 100vh;
+}
+
+.notes-list {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fill,
+			minmax(250px, 1fr));
+}
+
+.note.new {
+	background-color: #fef68a;
+
+
+}
+
+textarea {
+	border: none;
+	resize: none;
+	background-color: #fef68a;
+	font-size: large;
+	color: black;
+}
+
+#titulo {
+	font-weight: bold;
+}
+
+
+
+::placeholder {
+	color: black;
+}
+
+
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
+.save {
+	background-color: #e1e1e1;
+	border: none;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+}
+
+.save:hover {
+	background-color: #ededed;
+	cursor: pointer;
+}
+
+.note {
+	background-color: #fef68a;
+	border-radius: 10px;
+	padding: 1rem;
+	min-height: 263px;
+	display: flex;
+	word-wrap: break-word;
+	flex-direction: column;
+	white-space: pre-wrap;
+	justify-content: space-between;
+}
+
+.nota-edicion {
+	background-color: #fef68a;
+	border-radius: 10px;
+	padding: 1rem;
+	min-height: 263px;
+	display: flex;
+	word-wrap: break-word;
+	flex-direction: column;
+	white-space: pre-wrap;
+	justify-content: space-between;
+}
+
+.nota-edicion textarea {
+	border-radius: 3px;
+	background-color: #fef68a;
+}
+
+.nota-edicion #guardar {
+	background-color: #e1e1e1;
+	border: none;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.nota-edicion #cancelar {
+	background-color: #fa4b4b;
+	border: none;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.btn-edit {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.note-content {
+	flex-grow: 1;
+}
+
+
+.note h2 {
+	margin: 0;
+	font-size: large;
+
+}
+
+.note-footer {
+	display: flex;
+
+	justify-content: space-between;
+}
+
+.delete-icon {
+	cursor: pointer;
+}
+
+.edit-icon {
+	cursor: pointer;
+}
+
+.note-edit:nth-child(2) {
+	margin-left: auto;
+
+}
+
+
+.search {
+	display: flex;
+	align-items: center;
+	background-color: rgba(233, 233, 233, 0.836);
+	border-radius: 10px;
+	padding: 5px;
+
+	margin-bottom: 1.5em;
+}
+
+.search input {
+	border: none;
+	background-color: rgba(233, 233, 233, 0);
+	width: 100%;
+}
+
+.search input:focus {
+	outline: none;
+}
+
+
+.note.important {
+	background-color: red;
+	color: white;
+}
+
+.note-edicion.important {
+	background-color: red;
+	color: white;
+}
+
+.important-icon {
+	cursor: pointer;
+	color: gold;
+	background-color: #030303;
+	border-radius: 10px;
+	width: 1.1em;
+
+}
+
+.note-important {
+	display: flex;
+	justify-content: flex-end;
+	top: 10px;
+	right: 10px;
+}
+
+
+.fixed-button {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1;
+	background-color: #e1e1e1;
+	color: black;
+	border: none;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+
+/* modal*/
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+}
+
+.modal {
+	background-color: #fef68a;
+	padding: 10px;
+	border-radius: 10px;
+	max-width: 500px;
+	width: 100%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	margin: 0 20px;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modal-header h2 {
+	margin: 0;
+}
+
+.modal-header button {
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.modal-footer button {
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+}
+
+/* modal eliminar */
+.modal-overlay2 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+}
+
+.modal2 {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 500px;
+	width: 100%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	margin: 0 20px;
+}
+
+.modal-header2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.modal-header2 h2 {
+	margin: 0;
+}
+
+.modal-header2 button {
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.modal-footer2 {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.modal-footer2 button {
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+}
+
+
+
+
+.modal-footer2 button:first-child {
+	background-color: #e1e1e1;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.modal-footer2 button:last-child {
+	background-color: red;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	font-weight: bold;
+	color: white;
+}
