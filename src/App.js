@@ -16,6 +16,8 @@ const App = () => {
 	const [showConfirmation, setShowConfirmation] = useState(false);
 	const [noteToDelete, setNoteToDelete] = useState(null);
 
+	/* Notas y modo oscuro guardados en local memory */
+
 	useEffect(() => {
 		const savedNotes = JSON.parse(localStorage.getItem('notas-app-data'));
 		const savedDarkMode = JSON.parse(localStorage.getItem('notas-app-dark-mode'));
@@ -68,10 +70,6 @@ const App = () => {
 		setShowConfirmation(false);
 		setNoteToDelete(null);
 	};
-
-
-
-
 
 	const updateNote = (id, newTitle, newText) => {
 		const updatedNotes = notes.map((note) =>

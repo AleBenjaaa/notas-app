@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
+/* Creación de una nueva nota*/
 
 const NuevaNota = ({ handleAddNote }) => {
 	const [noteTitle, setNoteTitle] = useState('');
 	const [noteText, setNoteText] = useState('');
 	const [isImportant, setIsImportant] = useState(false);
-	const characterLimit = 216;
+	const characterLimit = 230;
 	const characterLimit1 = 50;
 
 	const handleChange1 = (event) => {

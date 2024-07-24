@@ -33,7 +33,7 @@ const NotaNormal = ({ id, title, text, date, handleEditClick, handleDeleteNote, 
     </div>
 );
 
-const NotaEditable = ({ id, initialTitle, initialText, date, handleSaveClick, handleCancelClick, isImportant }) => {
+const NotaEditable = ({ id, initialTitle, initialText, handleSaveClick, handleCancelClick, isImportant }) => {
     const [editedTitle, setEditedTitle] = useState(initialTitle);
     const [editedText, setEditedText] = useState(initialText);
 
@@ -43,7 +43,11 @@ const NotaEditable = ({ id, initialTitle, initialText, date, handleSaveClick, ha
     }, [initialTitle, initialText]);
 
     const save = () => {
-        handleSaveClick(id, editedTitle, editedText);
+        if (editedText.trim().length > 0) {
+            handleSaveClick(id, editedTitle, editedText);
+
+        }
+        
     };
 
     return (
