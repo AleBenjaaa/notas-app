@@ -43,7 +43,7 @@ const App = () => {
 		const date = new Date();
 		const newNote = {
 			id: nanoid(),
-			title: title || 'Sin título',
+			title: title,
 			text: text,
 			date: date.toLocaleDateString(),
 			isImportant: isImportant || false,
